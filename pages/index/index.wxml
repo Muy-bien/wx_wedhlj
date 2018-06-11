@@ -10,4 +10,7 @@
   <view class="usermotto">
     <text class="user-motto">{{motto}}</text>
   </view>
+  <button  open-type="contact" session-from="weapp">
+    客服
+  </button>
 </view>

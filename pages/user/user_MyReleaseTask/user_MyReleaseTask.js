@@ -1,4 +1,4 @@
-// pages/user/user_TaskRelease/user_TaskRelease.js
+// pages/user/user_MyReleaseTask/user_MyReleaseTask.js
 Page({
 
   /**

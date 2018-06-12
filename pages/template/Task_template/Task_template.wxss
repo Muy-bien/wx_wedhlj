@@ -1,0 +1,95 @@
+page{
+  background: #f7f7f7;
+}
+
+.Task_container{
+  padding: 0 30rpx;
+}
+
+.Task_header{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20rpx 0 30rpx 0;
+}
+
+.Task_header_logo{
+  width: 120rpx;
+  height: 120rpx;
+  border: 1px solid #f4f4f4;
+  box-sizing: border-box;
+  border-radius: 100%;
+  overflow: hidden;
+  padding: 2rpx;
+}
+
+.Task_header_logo image{
+  width: 100%;
+  height: 100%;
+  border-radius: 100%;
+}
+
+.Task_header_box{
+  display: flex;
+  align-items: center;
+  width: 500rpx;
+  justify-content: space-between;
+  box-sizing: border-box;
+  border-bottom: 1rpx solid #e6e6e6;
+}
+
+.Task_header_box view{
+  display: flex;
+  flex-direction: column;
+}
+
+.Task_header_type{
+  font-size: 20px;
+  color: #333;
+  font-weight: bold;
+  margin-bottom: 20rpx;
+}
+
+.Task_header_user{
+  font-size: 28rpx;
+  color: #666;
+  margin-bottom: 17rpx;
+}
+
+.Task_header_moeny{
+  font-size: 36rpx;
+  color: #f23c76;
+}
+
+.Task_info{
+  display: flex;
+  flex-direction: column;
+}
+
+.Task_info view{
+  font-size: 30rpx;
+  color: #666;
+  margin-bottom: 18rpx;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.Task_info .Task_info_title{
+  color: #333;
+  font-size: 36rpx;
+  margin-bottom: 18rpx;
+}
+
+.Task_info view text{
+  width: 510rpx;
+}
+
+.Task_info view .Task_info_text{
+  width: 150rpx;
+  text-align: left;
+  line-height: 45rpx;
+}
+
+.Task_info_text text{
+  margin-right: 60rpx;
+}

@@ -1,16 +1,16 @@
-<!--index.wxml-->
-<view class="container">
-  <view class="userinfo">
-    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
-    <block wx:else>
-      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
-      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
-    </block>
+<!-- <button  open-type="contact" session-from="weapp">客服</button> -->
+<import src="../template/Task_template/Task_template.wxml" />
+<view class='container'>
+  <view class='task_list'>
+    <template is="Task_template" />
+    <view class='task_but'>
+      <button  open-type="contact" session-from="weapp">报名</button>
+    </view>
   </view>
-  <view class="usermotto">
-    <text class="user-motto">{{motto}}</text>
+  <view class='task_list'>
+    <template is="Task_template" />
+    <view class='task_but'>
+      <button  open-type="contact" session-from="weapp">报名</button>
+    </view>
   </view>
-  <button  open-type="contact" session-from="weapp">
-    客服
-  </button>
 </view>

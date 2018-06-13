@@ -1,3 +1,4 @@
 {
-  "navigationBarTitleText": "婚礼匠"
+  "navigationBarTitleText": "婚礼匠",
+  "enablePullDownRefresh": true
 }

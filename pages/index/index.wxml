@@ -1,4 +1,3 @@
-<!-- <button  open-type="contact" session-from="weapp">客服</button> -->
 <import src="../template/Task_template/Task_template.wxml" />
 <view class='container'>
   <view class='task_list'>

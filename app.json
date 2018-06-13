@@ -1,12 +1,11 @@
 {
   "pages": [
-    "pages/index/index",
     "pages/user/user",
+    "pages/index/index",
     "pages/user/user_ReleaseTask/user_ReleaseTask",
     "pages/user/user_MyReleaseTask/user_MyReleaseTask"
   ],
   "window": {
-    "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#f85162",
     "navigationBarTitleText": "WeChat",
     "navigationBarTextStyle": "white"

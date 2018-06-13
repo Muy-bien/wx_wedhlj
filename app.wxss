@@ -1,3 +1,15 @@
 button::after {
   border: none;
 }
+
+page {
+  background-color: #f7f7f7;
+}
+
+.Gradual_change{
+  background: -webkit-linear-gradient(30deg, #ec058a 0%, #f5576c 70%);
+}
+
+text{
+  font-family: "微软雅黑";
+}

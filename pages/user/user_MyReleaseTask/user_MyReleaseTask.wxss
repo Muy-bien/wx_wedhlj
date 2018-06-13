@@ -1,1 +1,6 @@
-/* pages/user/user_MyReleaseTask/user_MyReleaseTask.wxss */
+@import"../../template/Task_template/Task_template.wxss";
+.Task_list{
+  background: #fff;
+  padding-bottom: 20rpx;
+  margin: 20rpx 0;
+}

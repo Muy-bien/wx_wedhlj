@@ -1,2 +1,12 @@
-<!--pages/user/user_MyReleaseTask/user_MyReleaseTask.wxml-->
-<text>pages/user/user_MyReleaseTask/user_MyReleaseTask.wxml</text>
+<import src="../../template/Task_template/Task_template.wxml" />
+<view class='container'>
+  <view class='Task_list'>
+    <template is="Task_template" />
+  </view>
+  <view class='Task_list'>
+    <template is="Task_template" />
+  </view>
+  <view class='Task_list'>
+    <template is="Task_template" />
+  </view>
+</view>

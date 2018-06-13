@@ -1,1 +1,29 @@
-
+<view class='container'>
+  <view class='haeder Gradual_change'>
+    <view class='haeder_logo'>
+      <image class='haeder_logo_bg' src='/images/user/user_logo_bg.png'></image>
+      <image class='haeder_logo_img' mode='aspectFill' src='/images/user_logo.jpg'></image>
+    </view>
+    <text class='haeder_name'>昵称：雷电法王杨永信</text>
+    <image class='haeder_bg' src='/images/user/user_header_bg.png'></image>
+  </view>
+  <view class='Release_task'>
+    <view class='Release_task_but Gradual_change'>去发布新任务</view>
+  </view>
+  <view class='main'>
+    <view class='main_list' catchtap='myReleaseTask'>
+      <view class='main_list_left'>
+        <image src='/images/user/user_task.png'></image>
+        <text>我发布的任务</text>
+      </view>
+      <image class='main_list_Arrow' src='/images/icon/icon_01.png'></image>
+    </view>
+    <view class='main_list'>
+      <view class='main_list_left'>
+        <image src='/images/user/user_CustomerService.png'></image>
+        <text>客服电话：18875235621</text>
+      </view>
+      <image class='main_list_Arrow' src='/images/icon/icon_01.png'></image>
+    </view>
+  </view>
+</view>

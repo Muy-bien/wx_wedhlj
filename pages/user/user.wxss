@@ -48,6 +48,7 @@
   align-items: center;
   justify-content: center;
   background: #fff;
+  margin-bottom: 20rpx;
 }
 
 .Release_task_but{

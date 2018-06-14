@@ -8,7 +8,7 @@
     <image class='haeder_bg' src='/images/user/user_header_bg.png'></image>
   </view>
   <view class='Release_task'>
-    <view class='Release_task_but Gradual_change'>去发布新任务</view>
+    <view class='Release_task_but Gradual_change' catchtap='ReleaseTask'>去发布新任务</view>
   </view>
   <view class='main'>
     <view class='main_list' catchtap='myReleaseTask'>

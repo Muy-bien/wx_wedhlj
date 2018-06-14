@@ -7,7 +7,7 @@ page {
 }
 
 .Gradual_change{
-  background: -webkit-linear-gradient(30deg, #ec058a 0%, #f5576c 70%);
+  background: linear-gradient(30deg, #ec058a 0%, #f5576c 70%);
 }
 
 text{

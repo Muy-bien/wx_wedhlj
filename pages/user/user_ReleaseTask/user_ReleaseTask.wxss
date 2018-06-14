@@ -1,1 +1,122 @@
-/* pages/user/user_ReleaseTask/user_ReleaseTask.wxss */
+.box {
+  padding: 130rpx 0 50rpx;
+}
+
+.container {
+  width: 660rpx;
+  background: #fff;
+  margin: 0 auto;
+  border-radius: 20rpx;
+  box-shadow: 0 0 30rpx 15rpx rgba(255, 255, 255, 0.2);
+  padding-bottom: 20rpx;
+}
+
+.header {
+  height: 126rpx;
+  background: #e6e6e6;
+  position: relative;
+  border-top-left-radius: 20rpx;
+  border-top-right-radius: 20rpx;
+  margin-bottom: 35rpx;
+}
+
+.header_logo {
+  width: 160rpx;
+  height: 160rpx;
+  border-radius: 20rpx;
+  position: absolute;
+  left: 50%;
+  top: 0;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 0 10rpx 10rpx rgba(240, 10, 140, 0.1);
+}
+
+.main {
+  padding: 0 60rpx;
+}
+
+.main_title {
+  display: flex;
+  align-items: center;
+}
+
+.main_title image {
+  width: 20rpx;
+  height: 20rpx;
+  margin-right: 12rpx;
+}
+
+.main_title text {
+  color: #f5576c;
+  font-size: 20rpx;
+}
+
+.Task_type_list {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 20rpx 0 40rpx 30rpx;
+}
+
+.Task_type_list view {
+  padding: 0 30rpx;
+  height: 66rpx;
+  border-radius: 15rpx;
+  margin-right: 20rpx;
+  margin-bottom: 20rpx;
+  text-align: center;
+  line-height: 66rpx;
+  font-size: 24rpx;
+  box-sizing: border-box;
+  color: #f5546d;
+}
+
+.Task_type_list .Task_type_on {
+  color: #fff;
+}
+
+.Task_type_list .Task_type_off {
+  border: 1rpx solid #f5546d;
+  line-height: 64rpx;
+  padding: 0 28rpx;
+}
+
+.main_input {
+  width: 480rpx;
+  height: 69rpx;
+  box-sizing: border-box;
+  border-bottom: 1rpx solid #f12d7c;
+  margin-left: 30rpx;
+  padding: 0 10rpx;
+  font-size: 28rpx;
+  line-height: 68rpx;
+  color: #666;
+}
+
+.main_list_box {
+  margin-bottom: 20rpx;
+}
+
+.main_textarea {
+  width: 480rpx;
+  height: 130rpx;
+  box-sizing: border-box;
+  border: 1px solid #f12d7c;
+  margin-left: 30rpx;
+  padding: 10rpx;
+  font-size: 28rpx;
+  color: #666;
+  line-height: 34rpx;
+  margin-top: 20rpx;
+  border-radius: 10rpx;
+}
+
+.main_but {
+  width: 480rpx;
+  height: 94rpx;
+  margin: 40rpx 0 20rpx 30rpx;
+  font-size: 28rpx;
+  color: #fff;
+  text-align: center;
+  line-height: 94rpx;
+  border-radius: 10rpx;
+}

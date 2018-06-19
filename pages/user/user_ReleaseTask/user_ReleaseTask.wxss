@@ -32,7 +32,8 @@
 }
 
 .main {
-  padding: 0 60rpx;
+  width: 540rpx;
+  margin: 0 auto;
 }
 
 .main_title {
@@ -41,20 +42,20 @@
 }
 
 .main_title image {
-  width: 20rpx;
-  height: 20rpx;
+  width: 24rpx;
+  height: 24rpx;
   margin-right: 12rpx;
 }
 
 .main_title text {
   color: #f5576c;
-  font-size: 20rpx;
+  font-size: 24rpx;
 }
 
 .Task_type_list {
   display: flex;
   flex-wrap: wrap;
-  margin: 20rpx 0 40rpx 30rpx;
+  margin: 0 0 40rpx 30rpx;
 }
 
 .Task_type_list view {
@@ -62,7 +63,7 @@
   height: 66rpx;
   border-radius: 15rpx;
   margin-right: 20rpx;
-  margin-bottom: 20rpx;
+  margin-top: 20rpx;
   text-align: center;
   line-height: 66rpx;
   font-size: 24rpx;
@@ -82,18 +83,18 @@
 
 .main_input {
   width: 480rpx;
-  height: 69rpx;
+  height: 89rpx;
   box-sizing: border-box;
   border-bottom: 1rpx solid #f12d7c;
   margin-left: 30rpx;
   padding: 0 10rpx;
   font-size: 28rpx;
-  line-height: 68rpx;
+  line-height: 88rpx;
   color: #666;
 }
 
 .main_list_box {
-  margin-bottom: 20rpx;
+  margin-bottom: 30rpx;
 }
 
 .main_textarea {

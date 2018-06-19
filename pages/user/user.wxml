@@ -1,10 +1,13 @@
 <view class='container'>
   <view class='haeder Gradual_change'>
-    <view class='haeder_logo'>
-      <image class='haeder_logo_bg' src='/images/user/user_logo_bg.png'></image>
-      <image class='haeder_logo_img' mode='aspectFill' src='/images/user_logo.jpg'></image>
-    </view>
-    <text class='haeder_name'>昵称：雷电法王杨永信</text>
+    <button wx:if="{{!hasUserInfo && canIUse}}" class='Jurisdiction_but' open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
+     <block wx:elif="{{userInfo!='undefined'}}">
+      <view class='haeder_logo'>
+        <image class='haeder_logo_bg' src='/images/user/user_logo_bg.png'></image>
+        <image class='haeder_logo_img' mode='aspectFill' src='{{userInfo.avatarUrl}}'></image>
+      </view>
+      <text class='haeder_name'>昵称：{{userInfo.nickName}}</text>
+    </block> 
     <image class='haeder_bg' src='/images/user/user_header_bg.png'></image>
   </view>
   <view class='Release_task'>

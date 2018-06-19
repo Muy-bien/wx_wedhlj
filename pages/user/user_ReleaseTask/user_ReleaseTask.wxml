@@ -1,7 +1,7 @@
 <view class='box Gradual_change'>
   <view class='container'>
     <view class='header'>
-      <image class='header_logo' src='/images/user_logo.jpg' mode='aspectFill'></image>
+      <image wx:if="{{userInfo}}" class='header_logo' src='{{userInfo.avatarUrl}}' mode='aspectFill'></image>
     </view>
     <view class='main'>
       <view class='Task_type'>
@@ -27,6 +27,13 @@
       </view>
       <view class='main_list_box'>
         <view class='main_title'>
+          <image src='/images/task/ReleaseTask_07.png' mode='aspectFit'></image>
+          <text>联系电话</text>
+        </view>
+        <input class='main_input' placeholder='请输入联系电话' maxlength='11' bindblur="bindTelephone"></input> 
+      </view>
+      <view class='main_list_box'>
+        <view class='main_title'>
           <image src='/images/task/ReleaseTask_03.png' mode='aspectFit'></image>
           <text>价格</text>
         </view>
@@ -39,7 +46,7 @@
           <image src='/images/task/ReleaseTask_04.png' mode='aspectFit'></image>
           <text>酒店名称</text>
         </view>
-        <input class='main_input' placeholder='请输入酒店名称' bindblur="bindHotel_name"></input>
+        <input class='main_input' placeholder='请输入酒店名称' maxlength='16' bindblur="bindHotel_name"></input>
       </view>
       <view class='main_list_box'>
         <view class='main_title'>
@@ -49,7 +56,7 @@
         <picker mode="region" catchchange="catchRegionChange" value="{{region}}">
           <view class="main_input">{{this_region?this_region[0]+this_region[1]+this_region[2]:"请选择酒店地址"}}</view>
         </picker>
-        <input class='main_input' placeholder='请输入酒店详细地址' bindblur="bindHotel_address"></input>
+        <input class='main_input' placeholder='请输入酒店详细地址' maxlength='16' bindblur="bindHotel_address"></input>
       </view>
       <view class='main_list_box'>
         <view class='main_title'>

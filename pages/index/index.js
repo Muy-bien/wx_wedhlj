@@ -4,7 +4,7 @@ Page({
 
   },
   onLoad: function () {
-  
+
   },
   onPullDownRefresh: function () {
     wx.stopPullDownRefresh();

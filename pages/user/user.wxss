@@ -96,3 +96,13 @@
   width: 10rpx;
   height: 18rpx;
 }
+
+.Jurisdiction_but{
+  width: 229rpx;
+  height: 66rpx;
+  border-radius: 10rpx;
+  line-height: 66rpx;
+  color: #333;
+  font-size: 28rpx;
+  margin-top: 60rpx;
+}

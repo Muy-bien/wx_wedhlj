@@ -9,7 +9,9 @@ Page({
     region: ["四川省", "成都市", "金牛区"]
   },
   onLoad: function (options) {
-
+    this.setData({
+      userInfo: app.globalData.userInfo
+    })
   },
   TaskTypeTap: function (event) {
     var this_tasktype = event.target.dataset.tasktype;
@@ -51,9 +53,15 @@ Page({
       Requirement: event.detail.value
     })
   },
+  bindTelephone: function (event) {
+    this.setData({
+      Telephone: event.detail.value
+    })
+  },
   ReleaseTap: function (event) {
     var this_taskType = this.data.this_taskType;//任务类型
     var date = this.data.date;//时间
+    var Telephone = this.data.Telephone;//联系电话
     var this_money = this.data.this_money;//价格
     var Hotel_name = this.data.Hotel_name;//酒店名称
     var show_region = this.data.show_region;//酒店地址
@@ -61,6 +69,8 @@ Page({
     var Requirement = this.data.Requirement;//要求
     if (!date) {
       this.showToast("请选择时间");
+    } else if (!Telephone || Telephone.length < 11) {
+      this.showToast("请输入正确的联系电话");
     } else if (!this_money) {
       this.showToast("请选择价格");
     } else if (!Hotel_name) {
@@ -81,12 +91,11 @@ Page({
         takeRequire: Requirement,
         token: "123"
       }
-      console.log(data)
       utils.http("/task/addTask", "ReturnRelease", data);
     }
-    
+
   },
-  ReturnRelease:function(e){
+  ReturnRelease: function (e) {
     console.log(e);
   },
   showToast: function (title) {

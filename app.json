@@ -1,9 +1,11 @@
 {
   "pages": [
-    "pages/index/index",
     "pages/user/user",
+    "pages/user/upload_userInfo/upload_userInfo",
+    "pages/index/index",
     "pages/user/user_ReleaseTask/user_ReleaseTask",
-    "pages/user/user_MyReleaseTask/user_MyReleaseTask"
+    "pages/user/user_MyReleaseTask/user_MyReleaseTask",
+    "pages/user/Task_details/Task_details"
   ],
   "window": {
     "navigationBarBackgroundColor": "#f85162",

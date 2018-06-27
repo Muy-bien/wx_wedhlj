@@ -4,3 +4,10 @@
   padding-bottom: 20rpx;
   margin: 20rpx 0;
 }
+
+.complete{
+  text-align: center;
+  font-size: 36rpx;
+  color: #666;
+  padding: 20rpx;
+}

@@ -16,17 +16,23 @@
   <view class='main'>
     <view class='main_list' catchtap='myReleaseTask'>
       <view class='main_list_left'>
-        <image src='/images/user/user_task.png'></image>
+        <image src='/images/user/user_task.png' mode="aspectFit"></image>
         <text>我发布的任务</text>
       </view>
       <image class='main_list_Arrow' src='/images/icon/icon_01.png'></image>
     </view>
-    <view class='main_list'>
+    <view class='main_list' catchtap='userInfoTap'>
       <view class='main_list_left'>
-        <image src='/images/user/user_CustomerService.png'></image>
-        <text>客服电话：18875235621</text>
+        <image src='/images/user/user_info.png' mode="aspectFit"></image>
+        <text>我的资料</text>
       </view>
       <image class='main_list_Arrow' src='/images/icon/icon_01.png'></image>
+    </view>
+    <view class='main_list'>
+      <view class='main_list_left' catchtap='makePhoneCall'>
+        <image src='/images/user/user_CustomerService.png' mode="aspectFit"></image>
+        <text>客服电话：18875235621</text>
+      </view>
     </view>
   </view>
 </view>

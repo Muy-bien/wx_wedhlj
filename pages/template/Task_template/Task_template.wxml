@@ -3,31 +3,31 @@
   <view class='Task_container'>
     <view class='Task_header'>
       <view class='Task_header_logo'>
-        <image src='/images/user_logo.jpg' mode='aspectFill'></image>
+        <image src='{{headPortrait}}' mode='aspectFill'></image>
       </view>
       <view class='Task_header_box'>
         <view>
-          <text class='Task_header_type'>任务类型</text>
-          <text class='Task_header_user'>发布人的名字</text>
+          <text class='Task_header_type'>{{taskType}}</text>
+          <text class='Task_header_user'>{{userName1}}</text>
         </view>
-        <text class='Task_header_moeny'>￥600-300</text>
+        <text class='Task_header_moeny'>￥{{price}}</text>
       </view>
     </view>
     <view class='Task_info'>
       <text class='Task_info_title'>详情</text>
       <view>
         <text class='Task_info_text'>酒店名称：</text>
-        <text>成都希尔顿大酒店</text>
+        <text>{{name1}}</text>
       </view>
       <view>
         <text class='Task_info_text'>酒店地址：</text>
-        <text>成都天府新区时代1号斜对面东方广场</text>
+        <text>{{address}}</text>
       </view>
       <view>
         <text class='Task_info_text'><text>时</text>间：</text>
-        <text>2018.05.20</text>
+        <text>{{time1}}</text>
       </view>
-      <view>具体要求：<text>具备2年以上主持经验，超过2场大型婚礼主持项目身高172以上。</text></view>
+      <view>具体要求：<text>{{require1}}</text></view>
     </view>
   </view>
 </template>

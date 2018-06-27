@@ -1,0 +1,9 @@
+<import src="../../template/Task_template/Task_template.wxml"/>
+<view>
+  <template is="Task_template" data="{{...tasksData}}"/>
+  <view class='main_but'>
+    <button open-type="contact" show-message-card="true" session-from="weapp" class='Gradual_change'>报名</button>
+    <button open-type="share" class='Gradual_change'>分享</button>
+  </view>
+</view>
+

@@ -49,7 +49,7 @@
 
 .main_title text {
   color: #f5576c;
-  font-size: 24rpx;
+  font-size: 28rpx;
 }
 
 .Task_type_list {

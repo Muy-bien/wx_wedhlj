@@ -34,7 +34,7 @@ Page({
     }
   },
   getUserInfo: function (e) {
-    if (e.detail.userInfo){
+    if (e.detail.userInfo) {
       app.globalData.userInfo = e.detail.userInfo
       this.setData({
         userInfo: e.detail.userInfo,
@@ -43,13 +43,43 @@ Page({
     }
   },
   myReleaseTask: function (event) {
-    wx.navigateTo({
-      url: 'user_MyReleaseTask/user_MyReleaseTask',
-    })
+    this.navigateTo('user_MyReleaseTask/user_MyReleaseTask');
   },
   ReleaseTask: function (event) {
-    wx.navigateTo({
-      url: 'user_ReleaseTask/user_ReleaseTask',
+    this.navigateTo('user_ReleaseTask/user_ReleaseTask');
+  },
+  navigateTo:function(url){
+    var userInfo = app.globalData.userInfo;
+    var openid = app.globalData.openid;
+    if (!openid) {
+      this.showToast("请先登录微信")
+    } else if (!userInfo) {
+      this.showToast("请先获取头像昵称")
+    } else {
+      wx.navigateTo({
+        url: url,
+      })
+    }
+  },
+  userInfoTap:function(){
+    this.navigateTo('upload_userInfo/upload_userInfo')
+  },
+  showToast: function (title) {
+    wx.showToast({
+      title: title,
+      icon: 'none',
+      duration: 1000
     })
+  },
+  makePhoneCall:function(event){
+    wx.makePhoneCall({
+      phoneNumber:"18875235621"
+    })
+  },
+  onShareAppMessage: function (res) {
+    return {
+      title: '婚礼匠',
+      path: 'pages/index/index'
+    }
   }
 })

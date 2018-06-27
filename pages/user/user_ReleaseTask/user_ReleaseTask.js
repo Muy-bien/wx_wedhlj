@@ -6,7 +6,8 @@ Page({
     this_taskType: "主持人",
     thisDate: utils.getNowFormatDate(),
     money: ["500以下", "500-1000元", "1000-1500元", "1500-2000元", "2000-2500元", "2500-3000元", "3000-3500元", "4000以上"],
-    region: ["四川省", "成都市", "金牛区"]
+    region: ["四川省", "成都市", "金牛区"],
+    complete: true
   },
   onLoad: function (options) {
     this.setData({
@@ -83,20 +84,32 @@ Page({
       this.showToast("请输入任务要求");
     } else {
       var data = {
-        takeType: this_taskType,
-        entranceTime: date,
-        takePrice: this_money,
-        hotelName: Hotel_name,
-        hotelAddress: show_region + "," + Hotel_address,
-        takeRequire: Requirement,
-        token: "123"
+        nameId: app.globalData.openid,
+        taskType: this_taskType,
+        time1: date,
+        price: this_money,
+        name1: Hotel_name,
+        address: show_region + "," + Hotel_address,
+        require1: Requirement,
+        phone: Telephone,
+        headPortrait: this.data.userInfo.avatarUrl,
+        userName1: this.data.userInfo.nickName
       }
-      utils.http("/task/addTask", "ReturnRelease", data);
+      utils.http("/testboot/addTask", this.ReturnRelease, data);
+      wx.showNavigationBarLoading();
     }
-
   },
   ReturnRelease: function (e) {
-    console.log(e);
+    wx.hideNavigationBarLoading();
+    if (e.status == "200") {
+      var success = true
+    } else {
+      var success = false
+    }
+    this.setData({
+      complete: false,
+      success: success
+    })
   },
   showToast: function (title) {
     wx.showToast({

@@ -1,71 +1,80 @@
-<view class='box Gradual_change'>
-  <view class='container'>
-    <view class='header'>
-      <image wx:if="{{userInfo}}" class='header_logo' src='{{userInfo.avatarUrl}}' mode='aspectFill'></image>
-    </view>
-    <view class='main'>
-      <view class='Task_type'>
-        <view class='main_title'>
-          <image src='/images/task/ReleaseTask_01.png' mode='aspectFit'></image>
-          <text>任务类型</text>
-        </view>
-        <view class='Task_type_list' catchtap="TaskTypeTap">
-          <block wx:for="{{taskType}}">
-            <view class='Task_type_on Gradual_change' wx:if="{{item == this_taskType}}" data-taskType='{{item}}'>{{item}}</view>
-            <view class='Task_type_off' wx:else data-taskType='{{item}}'>{{item}}</view>
-          </block>
-        </view>
+<block wx:if="{{complete}}">
+  <view class='box Gradual_change'>
+    <view class='container'>
+      <view class='header'>
+        <image wx:if="{{userInfo}}" class='header_logo' src='{{userInfo.avatarUrl}}' mode='aspectFill'></image>
       </view>
-      <view class='main_list_box'>
-        <view class='main_title'>
-          <image src='/images/task/ReleaseTask_02.png' mode='aspectFit'></image>
-          <text>时间</text>
+      <view class='main'>
+        <view class='Task_type'>
+          <view class='main_title'>
+            <image src='/images/task/ReleaseTask_01.png' mode='aspectFit'></image>
+            <text>任务类型</text>
+          </view>
+          <view class='Task_type_list' catchtap="TaskTypeTap">
+            <block wx:for="{{taskType}}">
+              <view class='Task_type_on Gradual_change' wx:if="{{item == this_taskType}}" data-taskType='{{item}}'>{{item}}</view>
+              <view class='Task_type_off' wx:else data-taskType='{{item}}'>{{item}}</view>
+            </block>
+          </view>
         </view>
-        <picker mode="date" value="{{date}}" start="{{thisDate}}" end="2030-12-31" catchchange="catchDateChange">
-          <view class='main_input'>{{date?date:"请选择任务执行时间"}}</view>
-        </picker>
-      </view>
-      <view class='main_list_box'>
-        <view class='main_title'>
-          <image src='/images/task/ReleaseTask_07.png' mode='aspectFit'></image>
-          <text>联系电话</text>
+        <view class='main_list_box'>
+          <view class='main_title'>
+            <image src='/images/task/ReleaseTask_02.png' mode='aspectFit'></image>
+            <text>时间</text>
+          </view>
+          <picker mode="date" value="{{date}}" start="{{thisDate}}" end="2030-12-31" catchchange="catchDateChange">
+            <view class='main_input'>{{date?date:"请选择任务执行时间"}}</view>
+          </picker>
         </view>
-        <input class='main_input' placeholder='请输入联系电话' maxlength='11' bindblur="bindTelephone"></input> 
-      </view>
-      <view class='main_list_box'>
-        <view class='main_title'>
-          <image src='/images/task/ReleaseTask_03.png' mode='aspectFit'></image>
-          <text>价格</text>
+        <view class='main_list_box'>
+          <view class='main_title'>
+            <image src='/images/task/ReleaseTask_07.png' mode='aspectFit'></image>
+            <text>联系电话</text>
+          </view>
+          <input class='main_input' placeholder='请输入联系电话' maxlength='11' bindblur="bindTelephone"></input>
         </view>
-        <picker range="{{money}}" value="{{index}}" catchchange="catchMoneyChange">
-          <view class='main_input'>{{this_money?this_money:"请选择您的任务价格"}}</view>
-        </picker>
-      </view>
-      <view class='main_list_box'>
-        <view class='main_title'>
-          <image src='/images/task/ReleaseTask_04.png' mode='aspectFit'></image>
-          <text>酒店名称</text>
+        <view class='main_list_box'>
+          <view class='main_title'>
+            <image src='/images/task/ReleaseTask_03.png' mode='aspectFit'></image>
+            <text>价格</text>
+          </view>
+          <picker range="{{money}}" value="{{index}}" catchchange="catchMoneyChange">
+            <view class='main_input'>{{this_money?this_money:"请选择您的任务价格"}}</view>
+          </picker>
         </view>
-        <input class='main_input' placeholder='请输入酒店名称' maxlength='16' bindblur="bindHotel_name"></input>
-      </view>
-      <view class='main_list_box'>
-        <view class='main_title'>
-          <image src='/images/task/ReleaseTask_05.png' mode='aspectFit'></image>
-          <text>酒店地址</text>
+        <view class='main_list_box'>
+          <view class='main_title'>
+            <image src='/images/task/ReleaseTask_04.png' mode='aspectFit'></image>
+            <text>酒店名称</text>
+          </view>
+          <input class='main_input' placeholder='请输入酒店名称' maxlength='16' bindblur="bindHotel_name"></input>
         </view>
-        <picker mode="region" catchchange="catchRegionChange" value="{{region}}">
-          <view class="main_input">{{this_region?this_region[0]+this_region[1]+this_region[2]:"请选择酒店地址"}}</view>
-        </picker>
-        <input class='main_input' placeholder='请输入酒店详细地址' maxlength='16' bindblur="bindHotel_address"></input>
-      </view>
-      <view class='main_list_box'>
-        <view class='main_title'>
-          <image src='/images/task/ReleaseTask_06.png' mode='aspectFit'></image>
-          <text>要求</text>
+        <view class='main_list_box'>
+          <view class='main_title'>
+            <image src='/images/task/ReleaseTask_05.png' mode='aspectFit'></image>
+            <text>酒店地址</text>
+          </view>
+          <picker mode="region" catchchange="catchRegionChange" value="{{region}}">
+            <view class="main_input">{{this_region?this_region[0]+this_region[1]+this_region[2]:"请选择酒店地址"}}</view>
+          </picker>
+          <input class='main_input' placeholder='请输入酒店详细地址' maxlength='16' bindblur="bindHotel_address"></input>
         </view>
-        <textarea class='main_textarea' maxlength='35' placeholder='请输入您的要求' bindblur="bindRequirement"></textarea>
+        <view class='main_list_box'>
+          <view class='main_title'>
+            <image src='/images/task/ReleaseTask_06.png' mode='aspectFit'></image>
+            <text>要求</text>
+          </view>
+          <textarea class='main_textarea' maxlength='35' placeholder='请输入您的要求' bindblur="bindRequirement"></textarea>
+        </view>
+        <view class='main_but Gradual_change' catchtap='ReleaseTap'>确定发布</view>
       </view>
-      <view class='main_but Gradual_change' catchtap='ReleaseTap'>确定发布</view>
     </view>
   </view>
-</view>
+</block>
+<block wx:else>
+  <view class='Result'>
+    <image wx:if="{{success}}" src='/images/icon/icon_complete.png'></image>
+    <icon wx:else type='clear' size='86'></icon>
+    <text>{{success?"发布成功":"发布失败"}}</text>
+  </view>
+</block>

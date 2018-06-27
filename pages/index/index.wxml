@@ -1,15 +1,14 @@
 <import src="../template/Task_template/Task_template.wxml" />
 <view class='container'>
-  <view class='task_list'>
-    <template is="Task_template" />
-    <view class='task_but'>
-      <button  open-type="contact" session-from="weapp">报名</button>
+  <block wx:for="{{tasksData}}">
+    <view class='task_list'>
+      <view data-taskid='{{item.id}}' catchtap='taskDetailsTap'>
+        <template is="Task_template" data="{{...item}}" />
+      </view>
+      <view class='task_but'>
+        <button open-type="contact" session-from="weapp" show-message-card="true" send-message-title="任务详情">报名</button>
+      </view>
     </view>
-  </view>
-  <view class='task_list'>
-    <template is="Task_template" />
-    <view class='task_but'>
-      <button  open-type="contact" session-from="weapp">报名</button>
-    </view>
-  </view>
+  </block>
+  <view class='complete' wx:if="{{content}}">没有更多数据了</view>
 </view>

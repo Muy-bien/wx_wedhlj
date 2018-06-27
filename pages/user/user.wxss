@@ -82,7 +82,7 @@
 }
 
 .main_list_left image{
-  width: 44rpx;
+  width: 51rpx;
   height: 47rpx;
   margin-right: 26rpx;
 }

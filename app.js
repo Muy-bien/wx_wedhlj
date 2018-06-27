@@ -1,13 +1,29 @@
 App({
-  globalData:{
-    apiUrl:"http://www.wedhlj.com:8585/hlj/",
-    userInfo: null
+  globalData: {
+    apiUrl: "http://www.wedhlj.com:8080/demo/",
+    userInfo: null,
+    openid:""
   },
   onLaunch: function () {
     // 登录
     wx.login({
       success: res => {
-        // 发送 res.code 到后台换取 openId, sessionKey, unionId
+        var that = this;
+        //发送 res.code 到后台换取 openId, sessionKey, unionId
+        wx.request({
+          //获取openid接口  
+          url: 'https://api.weixin.qq.com/sns/jscode2session',
+          data: {
+            appid: "wx2c70c6bdcb67fe4e",
+            secret: "b9b1d8c3a49e601ff4d640d0732f67fd",
+            js_code: res.code,
+            grant_type: 'authorization_code'
+          },
+          method: 'GET',
+          success: function (res) {
+            that.globalData.openid = res.data.openid
+          }
+        })
       }
     })
     // 获取用户信息
@@ -17,6 +33,7 @@ App({
           // 已经授权，可以直接调用 getUserInfo 获取头像昵称，不会弹框
           wx.getUserInfo({
             success: res => {
+              //console.log(res);
               // 可以将 res 发送给后台解码出 unionId
               this.globalData.userInfo = res.userInfo
 

@@ -22,8 +22,9 @@ function http(url, callback, data) {
     data: data,
     method: "POST",
     header: {
-      "Content-Type": "application/json"
+      "Content-Type": "application/x-www-form-urlencoded"
     },
+    dataType: "json",
     success: function (res) {
       callback(res.data)
     },

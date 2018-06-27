@@ -1,0 +1,17 @@
+@import "../../template/Task_template/Task_template.wxss";
+.main_but{
+  display: flex;
+  justify-content: center;
+  margin-top: 40rpx;
+}
+
+.main_but button{
+  width: 229rpx;
+  height: 66rpx;
+  border-radius: 10rpx;
+  line-height: 66rpx;
+  text-align: center;
+  color: #fff;
+  font-size: 28rpx;
+  box-shadow: 0 0 5rpx 4rpx rgba(239,28,130,0.4);
+}

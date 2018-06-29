@@ -1,6 +1,6 @@
 App({
   globalData: {
-    apiUrl: "http://www.wedhlj.com:8080/demo/",
+    apiUrl: "http://172.16.14.16:8080/",
     userInfo: null,
     openid:""
   },

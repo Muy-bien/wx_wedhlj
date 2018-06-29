@@ -24,7 +24,7 @@ Page({
       pageNo: pageNo,
       pageSize: 15
     }
-    utils.http("/testboot/allTask", this.showTasks, data)
+    utils.http("/task/findAll", this.showTasks, data)
   },
   showTasks: function (e) {
     var tasks = JSON.parse(e.tasks);

@@ -4,67 +4,76 @@
       <image wx:if="{{userInfo}}" class='header_logo' src='{{userInfo.avatarUrl}}' mode='aspectFill'></image>
     </view>
     <view class='main'>
+      <view class='main_uploadText'>
+        <text class='main_title'>昵称</text>
+        <input maxlength='10' value='{{name}}' bindchange="nameChange"></input>
+      </view>
       <view class='Task_type'>
-        <view class='main_title'>
-          <text>类型</text>
-        </view>
+        <text class='main_title'>类型</text>
         <view class='Task_type_list' catchtap="TaskTypeTap">
           <block wx:for="{{taskType}}">
-            <view class='Task_type_on Gradual_change' wx:if="{{item == this_taskType}}" data-taskType='{{item}}'>{{item}}</view>
-            <view class='Task_type_off' wx:else data-taskType='{{item}}'>{{item}}</view>
+            <view class='Task_type_on Gradual_change' wx:if="{{index == this_taskType}}" data-taskType='{{index}}'>{{item}}</view>
+            <view class='Task_type_off' wx:else data-taskType='{{index}}'>{{item}}</view>
           </block>
         </view>
       </view>
-      <view class='main_list_box'>
-        <view class='main_title'>
-          <image src='/images/task/ReleaseTask_02.png' mode='aspectFit'></image>
-          <text>时间</text>
-        </view>
-        <picker mode="date" value="{{date}}" start="{{thisDate}}" end="2030-12-31" catchchange="catchDateChange">
-          <view class='main_input'>{{date?date:"请选择任务执行时间"}}</view>
-        </picker>
+      <view class='main_uploadText'>
+        <text class='main_title'>价格</text>
+        <input maxlength='11' value='{{money}}' bindchange="moneyChange"></input>
       </view>
-      <view class='main_list_box'>
-        <view class='main_title'>
-          <image src='/images/task/ReleaseTask_07.png' mode='aspectFit'></image>
-          <text>联系电话</text>
-        </view>
-        <input class='main_input' placeholder='请输入联系电话' maxlength='11' bindblur="bindTelephone"></input>
+      <view class='main_uploadText'>
+        <text class='main_title'>手机号</text>
+        <input maxlength='11' value='{{phone}}' bindchange="phoneChange"></input>
       </view>
-      <view class='main_list_box'>
-        <view class='main_title'>
-          <image src='/images/task/ReleaseTask_03.png' mode='aspectFit'></image>
-          <text>价格</text>
+      <view class='main_Sex'>
+        <text class='main_title'>性别</text>
+        <view class='main_Sex_box' catchtap='sexTap'>
+          <block wx:for="{{Sex}}">
+            <view class='sex_on Gradual_change' wx:if="{{index == this_sex}}" data-sexType='{{index}}'>
+              <image src='{{item.img_on}}' data-sexType='{{index}}' />
+            </view>
+            <view class='sex_off' wx:else data-sexType='{{index}}'>
+              <image src='{{item.img_off}}' data-sexType='{{index}}' />
+            </view>
+          </block>
         </view>
-        <picker range="{{money}}" value="{{index}}" catchchange="catchMoneyChange">
-          <view class='main_input'>{{this_money?this_money:"请选择您的任务价格"}}</view>
-        </picker>
       </view>
-      <view class='main_list_box'>
-        <view class='main_title'>
-          <image src='/images/task/ReleaseTask_04.png' mode='aspectFit'></image>
-          <text>酒店名称</text>
+      <view class='main_video'>
+        <text class='main_title'>腾讯连接</text>
+        <view class='main_video_input'>
+          <input bindchange="bindTenXun_video" value="{{this_TenXun}}" placeholder='请输入腾讯视频网址'></input>
+          <button class='Gradual_change' catchtap='tapTenXun_video'>确定</button>
         </view>
-        <input class='main_input' placeholder='请输入酒店名称' maxlength='16' bindblur="bindHotel_name"></input>
+        <block wx:for="{{TenXun_Video}}">
+          <view class='main_showVideo'>
+            <text>{{item.url}}</text>
+            <view class='main_showVideo_img' catchtap='tapVideoDelete' data-videoId='{{item.id}}'>
+              <image src='/images/user/user_videoDelete.png' mode='center'></image>
+            </view>
+          </view>
+        </block>
       </view>
-      <view class='main_list_box'>
-        <view class='main_title'>
-          <image src='/images/task/ReleaseTask_05.png' mode='aspectFit'></image>
-          <text>酒店地址</text>
+      <view class='main_video'>
+        <text class='main_title'>优酷连接</text>
+        <view class='main_video_input'>
+          <input bindchange="bindYouKu_video" value="{{this_YouKu}}" placeholder='请输入优酷视频网址'></input>
+          <button class='Gradual_change' catchtap='tapYouKu_video'>确定</button>
         </view>
-        <picker mode="region" catchchange="catchRegionChange" value="{{region}}">
-          <view class="main_input">{{this_region?this_region[0]+this_region[1]+this_region[2]:"请选择酒店地址"}}</view>
-        </picker>
-        <input class='main_input' placeholder='请输入酒店详细地址' maxlength='16' bindblur="bindHotel_address"></input>
+        <block wx:for="{{YouKu_Video}}">
+          <view class='main_showVideo'>
+            <text>{{item.url}}</text>
+            <view class='main_showVideo_img' catchtap='tapYouKuVideoDelete' data-videoId='{{item.id}}'>
+              <image src='/images/user/user_videoDelete.png' mode='center'></image>
+            </view>
+          </view>
+        </block>
       </view>
-      <view class='main_list_box'>
-        <view class='main_title'>
-          <image src='/images/task/ReleaseTask_06.png' mode='aspectFit'></image>
-          <text>要求</text>
-        </view>
-        <textarea class='main_textarea' maxlength='35' placeholder='请输入您的要求' bindblur="bindRequirement"></textarea>
+      <view class='main_addImg'>
+        <text class='main_title'>图片</text>
+        <button class='Gradual_change' catchtap='addImgTap'>添加</button>
       </view>
-      <view class='main_but Gradual_change' catchtap='ReleaseTap'>确定发布</view>
+
+      <view class='main_but Gradual_change' catchtap='ReleaseTap'>确定修改</view>
     </view>
   </view>
 </view>

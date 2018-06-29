@@ -37,17 +37,6 @@
 }
 
 .main_title {
-  display: flex;
-  align-items: center;
-}
-
-.main_title image {
-  width: 24rpx;
-  height: 24rpx;
-  margin-right: 12rpx;
-}
-
-.main_title text {
   color: #f5576c;
   font-size: 28rpx;
 }
@@ -55,7 +44,7 @@
 .Task_type_list {
   display: flex;
   flex-wrap: wrap;
-  margin: 0 0 40rpx 30rpx;
+  margin-left: 30rpx;
 }
 
 .Task_type_list view {
@@ -81,36 +70,6 @@
   padding: 0 28rpx;
 }
 
-.main_input {
-  width: 480rpx;
-  height: 89rpx;
-  box-sizing: border-box;
-  border-bottom: 1rpx solid #f12d7c;
-  margin-left: 30rpx;
-  padding: 0 10rpx;
-  font-size: 28rpx;
-  line-height: 88rpx;
-  color: #666;
-}
-
-.main_list_box {
-  margin-bottom: 30rpx;
-}
-
-.main_textarea {
-  width: 480rpx;
-  height: 130rpx;
-  box-sizing: border-box;
-  border: 1px solid #f12d7c;
-  margin-left: 30rpx;
-  padding: 10rpx;
-  font-size: 28rpx;
-  color: #666;
-  line-height: 34rpx;
-  margin-top: 20rpx;
-  border-radius: 10rpx;
-}
-
 .main_but {
   width: 480rpx;
   height: 94rpx;
@@ -121,24 +80,126 @@
   line-height: 94rpx;
   border-radius: 10rpx;
 }
-
-.Result{
-  position: absolute;
-  background: #f7f7f7;
-  top: 50%; left: 50%;
-  transform: translate(-50%,-80%);
-  text-align: center;
+/* input */
+.main_uploadText{
+  display: flex;
+  align-items: center;
+  border-bottom: 1rpx #e6e6e6 solid;
 }
 
-.Result image{
-  width: 187rpx;
-  height: 187rpx;
+.main_uploadText input{
+  height: 80rpx;
+  width: 400rpx;
+  margin: 0 20rpx;
+  font-size: 28rpx;
+  color: #666;
+}
+/* 性别 */
+.main_Sex{
+  display: flex;
+  align-items: center;
+  border-bottom: 1px #e6e6e6 solid;
 }
 
-.Result text{
-  display: block;
+.main_Sex image{
+  width: 30rpx;
+  height: 30rpx;
+}
+
+.main_Sex_box{
+  display: flex;
+  align-items: center;
+  height: 80rpx;
+}
+
+.main_Sex_box view{
+  width: 94rpx;
+  height: 50rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 15rpx;
+  margin-left: 90rpx;
+  box-sizing: border-box;
+}
+
+.sex_off{
+  border: 1rpx #f02a7d solid;
+}
+/* 视频 */
+.main_video_input{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 15rpx 0 10rpx 0;
+}
+
+.main_video_input input{
+  width: 424rpx;
+  height: 56rpx;
+  box-sizing: border-box;
+  border: 1px solid #f5576c;
+  border-radius: 8rpx;
+  padding: 0 20rpx;
+  font-size: 28rpx;
+  color: #666;
+}
+
+.main_video_input button,
+.main_addImg button{
+  width: 96rpx;
+  height: 56rpx;
+  border-radius: 8rpx;
+  padding: 0;
+  font-size: 24rpx;
+  line-height: 56rpx;
+  color: #fff;
+  margin: 0;
+}
+
+.main_showVideo{
   width: 100%;
-  font-size: 36rpx;
-  color: #999;
-  margin-top: 45rpx;
+  height: 56rpx;
+  box-sizing: border-box;
+  border: 1px solid #f5576c;
+  border-radius: 8rpx;
+  margin-bottom: 10rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.main_showVideo text{
+  width: 440rpx;
+  height: 100%;
+  overflow: hidden;
+  font-size: 28rpx;
+  color: #666;
+  line-height: 54rpx;
+  margin: 0 20rpx;
+  box-sizing: border-box;
+}
+
+.main_showVideo_img{
+  width: 54rpx;
+  height: 54rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-left: 1rpx solid #999;
+}
+
+.main_showVideo_img image{
+  width: 22rpx;
+  height: 22rpx;
+}
+/* 添加图片 */
+.main_addImg{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 80rpx;
+  border-top: 1px solid #e6e6e6;
+  border-bottom: 1px solid #e6e6e6;
+  margin: 25rpx 0;
 }

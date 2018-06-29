@@ -1,3 +1,4 @@
+const utils = require("../../utils/util.js")
 const app = getApp();
 Page({
   data: {
@@ -41,6 +42,23 @@ Page({
         hasUserInfo: true
       })
     }
+    //验证是否创建账户
+    var data = {
+      openId: app.globalData.openid
+    }
+    utils.http("/user/openIdExists", this.judge, data)
+  },
+  judge:function(e){
+    //验证是否创建账户
+    if(e.status == 20000){
+      var data = {
+        openId: app.globalData.openid
+      }
+      utils.http("/user/register", this.register, data)
+    }
+  },
+  register:function(e){
+    
   },
   myReleaseTask: function (event) {
     this.navigateTo('user_MyReleaseTask/user_MyReleaseTask');
@@ -48,7 +66,7 @@ Page({
   ReleaseTask: function (event) {
     this.navigateTo('user_ReleaseTask/user_ReleaseTask');
   },
-  navigateTo:function(url){
+  navigateTo: function (url) {
     var userInfo = app.globalData.userInfo;
     var openid = app.globalData.openid;
     if (!openid) {
@@ -61,7 +79,7 @@ Page({
       })
     }
   },
-  userInfoTap:function(){
+  userInfoTap: function () {
     this.navigateTo('upload_userInfo/upload_userInfo')
   },
   showToast: function (title) {
@@ -71,9 +89,9 @@ Page({
       duration: 1000
     })
   },
-  makePhoneCall:function(event){
+  makePhoneCall: function (event) {
     wx.makePhoneCall({
-      phoneNumber:"18875235621"
+      phoneNumber: "18875235621"
     })
   },
   onShareAppMessage: function (res) {
